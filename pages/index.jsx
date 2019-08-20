@@ -1,12 +1,8 @@
+import '../src/style.css'
+
 function Home() {
     return (
-        <div>
-            <style jsx>{`
-                div {
-                    color: tomato;
-                }
-            `}</style>
-
+        <div className={'welcome'}>
             Welcome to Next.js!
         </div>
     )
