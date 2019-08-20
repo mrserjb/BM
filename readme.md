@@ -1,5 +1,20 @@
 # тренировочный проект для нубов
 
+## Run & Deploy
+
+Run local dev server 
+
+```
+npm run dev
+```
+
+Deploy production to now.sh
+
+```
+now
+```
+
+
 ## Почитать
 
 ### CSS: flexbox
