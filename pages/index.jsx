@@ -1,6 +1,14 @@
 function Home() {
     return (
-        <div>Welcome to Next.js!</div>
+        <div>
+            <style jsx>{`
+                div {
+                    color: tomato;
+                }
+            `}</style>
+
+            Welcome to Next.js!
+        </div>
     )
 }
 
