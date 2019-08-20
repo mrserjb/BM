@@ -1,7 +1,11 @@
 body {
-    background-color: tomato;
+    background-color: #424343;
 }
 
 .welcome {
-    color: gold;
+    font-size: 100pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #f3a59e;
+    font-family: 'Montserrat', sans-serif;
 }
