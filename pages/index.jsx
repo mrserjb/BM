@@ -1,6 +1,11 @@
 import '../src/style.css'
 import Icon from '@mdi/react';
-import { mdiPhone, mdiEmail, mdiMail } from '@mdi/js';
+import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown } from '@mdi/js';
+
+const Typograf = require('typograf');
+const tp = new Typograf({locale: ['ru', 'en-US']});
+
+console.log(tp.execute(' Мир - мой мир!!   '));
 
 function ResponsiveIcon(props) {
     return (
@@ -42,19 +47,32 @@ function Home() {
     return (
         <>
             <div className={'welcome'}>
-                <h1>Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг.</h1>
+                <h1
+                >
+                   {tp.execute('Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг')}</h1>
                 <div className={'logo'}>
                     <div>
-                        <ResponsiveIcon path={mdiMail} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                         <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiMail} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        <ResponsiveIcon path={mdiCellphoneIphone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                     </div>
                     <img src={'/static/svg/bm_logo.svg'}></img>
                 </div>
+                <div
+                style={{
+                    display: 'flex',
+                    paddingTop: '2%',
+                    justifyContent: 'center',
+                }}>
+                    <Icon path={mdiChevronDown} color="rgb(243, 165, 158)" size={2} />
+                </div>
             </div>
             <div className={'pref'}>
-                <p display>hlfkf</p>
+                <h2>GHGKHJK</h2>
+                <p display>
+                {tp.execute('Повседневная практика показывает, что рамки и место обучения кадров требуют определения и уточнения направлений прогрессивного развития. Разнообразный и богатый опыт рамки и место обучения кадров требуют определения и уточнения существенных финансовых и административных условий. Таким образом новая модель организационной деятельности позволяет оценить значение существенных финансовых и административных условий.')}
+                </p>
             </div>
         </>
     )
