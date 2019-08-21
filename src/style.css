@@ -73,6 +73,7 @@ p {
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: auto;
 }
 
 .logo > div {

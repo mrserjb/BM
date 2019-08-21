@@ -53,8 +53,8 @@ function Home() {
                 <div className={'logo'}>
                     <div>
                         <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                         <ResponsiveIcon path={mdiCellphoneIphone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                         <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                     </div>
                     <img src={'/static/svg/bm_logo.svg'}></img>
