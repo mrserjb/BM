@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800,900&display=swap&subset=cyrillic');
+
+:root {
+    --header-font-size: 7vw;
+}
+
 body {
     background-color: #ffffff;
     margin: 0;
@@ -10,11 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    width: 75%;
     /* hyphens: auto; */
-    font-size: 8rem;
+    font-size: var(--header-font-size);
+    line-height: var(--header-font-size);
     font-weight: 800;
-    line-height : 7rem;
     text-transform: uppercase;
     color : rgb(243, 165, 158);
     font-family: 'Montserrat', sans-serif;
@@ -102,4 +106,20 @@ p {
     background-color: #424343;
     padding: 3%;
     box-sizing: border-box;
+}
+
+/* @media (max-width: 1366px) {
+    :root {
+        --header-font-size: 7vw;
+    }
+} */
+@media (max-width: 1366px) and (orientation: landscape) {
+    :root {
+        --header-font-size: 8vw;
+    }
+}
+@media (max-width: 1280px) and (orientation: landscape) {
+    :root {
+        --header-font-size: 12vw;
+    }
 }
