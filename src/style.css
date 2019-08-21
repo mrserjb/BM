@@ -46,6 +46,8 @@ p {
 }
 
 .logo {
+    padding-top: 5%;
     display: flex;
-    flex-flow: column-reverse;
+    flex-flow: row;
+    justify-content: space-between;
 }

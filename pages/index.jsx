@@ -7,13 +7,11 @@ function Home() {
                 <h1>Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг.</h1>
                 <div className={'logo'}>
                     <p>hlfkf</p>
-                    <p>hlfkf</p>
+                    <img src={'/static/svg/bm_logo.svg'}></img>
                 </div>
             </div>
             <div className={'pref'}>
-                <p>hlfkf
-                klhdjkgh
-                kndgkl</p>
+                <p display>hlfkf</p>
             </div>
         </>
     )
