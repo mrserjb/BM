@@ -29,12 +29,21 @@ h2 {
     font-family: 'Montserrat', sans-serif; 
 }
 
+h3 {
+    hyphens: auto;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif; 
+}
+
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
-    /* color: #424343; */
+    color: #424343;
 }
 
 .welcome {
@@ -45,7 +54,9 @@ p {
 }
 
 .colomn-layout {
-    padding: 10% 3%;
+    padding: 10% 10% 5% 10%;
+    /* padding-top: 10%;
+    padding-bottom: 5%; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -66,4 +77,12 @@ p {
 
 .logo > div {
     display: flex;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    background-color: #424343;
+    padding: 3%;
+    box-sizing: border-box;
 }
