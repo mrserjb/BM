@@ -11,7 +11,6 @@ function ResponsiveIcon(props) {
     return (
         <div
             style={{
-                marginRight: 10,
                 width: 100,
                 // height: 0,
                 position: 'relative',
@@ -20,7 +19,7 @@ function ResponsiveIcon(props) {
             <div
                 style={{
                     paddingBottom: '100%',
-                    backgroundColor: props.backgroundColor,
+                    // backgroundColor: props.backgroundColor,
                 }}
             >
                 <div
@@ -52,13 +51,21 @@ function Home() {
                     {tp.execute('Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг')}</h1>
                 <div className={'logo'}>
                     <div>
-                        <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiCellphoneIphone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        <a href={'tel:000000'}>
+                            <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        </a>
+                        <a href={'tel:000000'}>
+                            <ResponsiveIcon path={mdiCellphoneIphone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        </a>
+                        <a href={'tel:000000'}>
+                            <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        </a>
+                        <a href={'tel:000000'}>
+                            <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
+                        </a>
                     </div>
                     <img src={'/static/svg/bm_logo.svg'}></img>
-                </div>
+                </div >
                 <div
                     style={{
                         display: 'flex',
@@ -67,7 +74,7 @@ function Home() {
                     }}>
                     <Icon path={mdiChevronDown} color="rgb(243, 165, 158)" size={2} />
                 </div>
-            </div>
+            </div >
             <div className={'colomn-layout'}>
                 <div className={'colomn'}>
                     <h2>Готовый бизнес</h2>
@@ -96,18 +103,18 @@ function Home() {
 
             </div>
             <div className={'footer'}>
-                    <div>
+                <div>
                     <h3>Контакты</h3>
                     <p display
-                    style={{
-                        color: 'white',
-                        width: '40%',
+                        style={{
+                            color: 'white',
+                            width: '40%',
 
-                    }}>
+                        }}>
                         {tp.execute('Товарищи! реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Равным образом дальнейшее развитие различных форм деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.')}
                     </p>
-                    </div>
-                    <img width={200} src={'/static/svg/bm_logo.svg'}></img>
+                </div>
+                <img width={200} src={'/static/svg/bm_logo.svg'}></img>
 
             </div>
         </>
