@@ -22,9 +22,8 @@ h1 {
 
 h2 {
     hyphens: auto;
-    font-size: 7rem;
+    font-size: 2rem;
     font-weight: 800;
-    line-height : 7rem;
     text-transform: uppercase;
     color: #424343;
     font-family: 'Montserrat', sans-serif; 
@@ -32,7 +31,8 @@ h2 {
 
 p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14pt;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
     /* color: #424343; */
 }
@@ -44,8 +44,16 @@ p {
     height: 100vh;
 }
 
-.pref {
+.colomn-layout {
     padding: 10% 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.colomn {
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
 }
 
 .logo {
