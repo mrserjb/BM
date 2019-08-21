@@ -25,5 +25,9 @@
     "next": "^9.0.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@mdi/js": "^4.1.95",
+    "@mdi/react": "^1.2.1"
   }
 }

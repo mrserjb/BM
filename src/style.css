@@ -49,5 +49,7 @@ p {
     padding-top: 5%;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    height: 7rem;
 }
