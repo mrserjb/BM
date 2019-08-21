@@ -1,15 +1,21 @@
 import '../src/style.css'
-<style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800,900&display=swap&subset=cyrillic');
-</style>
-
 
 function Home() {
     return (
-    
-        <div className={'welcome'}>
-            Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг
-        </div>
+        <>
+            <div className={'welcome'}>
+                <h1>Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг.</h1>
+                <div className={'logo'}>
+                    <p>hlfkf</p>
+                    <p>hlfkf</p>
+                </div>
+            </div>
+            <div className={'pref'}>
+                <p>hlfkf
+                klhdjkgh
+                kndgkl</p>
+            </div>
+        </>
     )
 }
 
