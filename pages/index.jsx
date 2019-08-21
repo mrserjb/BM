@@ -66,14 +66,14 @@ function Home() {
                     </div>
                     <img src={'/static/svg/bm_logo.svg'}></img>
                 </div >
-                <div
+                {/* <div
                     style={{
                         display: 'flex',
-                        paddingTop: '2%',
+                        // paddingTop: '2%',
                         justifyContent: 'center',
                     }}>
                     <Icon path={mdiChevronDown} color="rgb(243, 165, 158)" size={2} />
-                </div>
+                </div> */}
             </div >
             <div className={'colomn-layout'}>
                 <div className={'colomn'}>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800,900&display=swap&subset=cyrillic');
-
 :root {
     --header-font-size: 7vw;
 }
@@ -10,7 +9,12 @@ body {
     height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
@@ -20,7 +24,7 @@ h1 {
     line-height: var(--header-font-size);
     font-weight: 800;
     text-transform: uppercase;
-    color : rgb(243, 165, 158);
+    color: rgb(243, 165, 158);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,7 +34,7 @@ h2 {
     font-weight: 800;
     text-transform: uppercase;
     color: #424343;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
@@ -39,7 +43,7 @@ h3 {
     font-weight: 800;
     text-transform: uppercase;
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -72,6 +76,7 @@ p {
     display: flex;
     flex-wrap: wrap;
 }
+
 .colomn {
     width: 40%;
     padding-left: 5%;
@@ -80,28 +85,31 @@ p {
 }
 
 .logo {
-    padding-top: 4%;
+    bottom: 2%;
+    /* padding-bottom: 3px; */
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: auto;
+    /* position: absolute; */
+    /* flex-wrap: wrap; */
 }
 
-.logo > div {
+.logo>div {
     display: flex;
 }
 
-.logo > div > * {
+.logo>div>* {
     margin-right: 10px;
 }
 
-.logo > div > *:last-child {
+.logo>div>*:last-child {
     margin-right: 0;
 }
 
 .footer {
     display: flex;
+    flex: 0 0 auto;
     align-items: flex-start;
     background-color: #424343;
     padding: 3%;
@@ -113,13 +121,21 @@ p {
         --header-font-size: 7vw;
     }
 } */
+
 @media (max-width: 1366px) and (orientation: landscape) {
     :root {
         --header-font-size: 8vw;
     }
 }
+
 @media (max-width: 1280px) and (orientation: landscape) {
     :root {
-        --header-font-size: 12vw;
+        --header-font-size: 7vw;
+    }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+    body {
+        flex-direction: column;
     }
 }
