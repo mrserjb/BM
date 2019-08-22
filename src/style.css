@@ -64,7 +64,7 @@ p {
 
 .welcome {
     background-color: #424343;
-    padding: 20px;
+    padding: 20px 20px 0;
     box-sizing: border-box;
     height: 100vh;
 
@@ -88,14 +88,14 @@ p {
 }
 
 .logo {
-    bottom: 2%;
-    /* padding-bottom: 3px; */
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
     /* position: absolute; */
     /* flex-wrap: wrap; */
+
+    flex-wrap: wrap-reverse;
 }
 
 .logo>div {
@@ -103,16 +103,13 @@ p {
 }
 
 .logo>div>* {
+    margin-bottom: 20px;
     margin-right: 10px;
 }
 
-.logo>div>*:last-child {
-    margin-right: 0;
-}
-
 .logo-image {
-    min-height: 50px;
-    max-height: 100px;
+    margin-bottom: 20px;
+    height: 100px;
 }
 
 .footer {

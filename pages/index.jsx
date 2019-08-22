@@ -9,9 +9,12 @@ console.log(tp.execute(' Мир - мой мир!!   '));
 
 function ResponsiveIcon(props) {
     return (
-        <div
+        <a
+            href={props.href}
             style={{
-                width: 100,
+                minWidth: 75,
+                width: '100%',
+                maxWidth: 100,
                 // height: 0,
                 position: 'relative',
             }}
@@ -19,7 +22,7 @@ function ResponsiveIcon(props) {
             <div
                 style={{
                     paddingBottom: '100%',
-                    // backgroundColor: props.backgroundColor,
+                    backgroundColor: props.backgroundColor,
                 }}
             >
                 <div
@@ -38,7 +41,7 @@ function ResponsiveIcon(props) {
                     <Icon path={props.path} color={props.color} size={props.size} />
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 
@@ -53,19 +56,33 @@ function Home() {
                 >
                     {tp.execute('Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг')}</h1>
                 <div className={'logo'}>
-                    <div>
-                        <a href={'tel:000000'}>
-                            <ResponsiveIcon path={mdiPhone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        </a>
-                        <a href={'tel:000000'}>
-                            <ResponsiveIcon path={mdiCellphoneIphone} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        </a>
-                        <a href={'tel:000000'}>
-                            <ResponsiveIcon path={mdiEmailOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        </a>
-                        <a href={'tel:000000'}>
-                            <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
-                        </a>
+                    <div style={{
+                        flex: 1
+                    }}>
+                        <ResponsiveIcon
+                            href={'tel:000000'}
+                            path={mdiPhone}
+                            color="#424343"
+                            size={2}
+                        />
+                        <ResponsiveIcon
+                            href={'tel:000000'}
+                            path={mdiCellphoneIphone}
+                            color="#424343"
+                            size={2}
+                        />
+                        <ResponsiveIcon
+                            href={'tel:000000'}
+                            path={mdiEmailOutline}
+                            color="#424343"
+                            size={2}
+                        />
+                        <ResponsiveIcon
+                            href={'tel:000000'}
+                            path={mdiEmailEditOutline}
+                            color="#424343"
+                            size={2}
+                        />
                     </div>
                     <img className={'logo-image'} src={'/static/svg/bm_logo.svg'} />
                 </div >
