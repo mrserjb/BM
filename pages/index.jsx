@@ -123,7 +123,11 @@ function Home() {
 
             </div>
             <div className={'footer'}>
-                <div>
+                <div
+                    style={{
+                        flex: 1,
+                    }}
+                >
                     <h3>Контакты</h3>
                     <p className={'footer_p'}
                         style={{

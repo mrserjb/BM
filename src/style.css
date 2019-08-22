@@ -134,6 +134,7 @@ p {
     padding: 3%;
     box-sizing: border-box;
     flex-wrap: wrap;
+    /* flex-direction: row; */
 }
 
 @media (max-width: 500px) {
