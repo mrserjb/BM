@@ -47,6 +47,9 @@ function Home() {
         <>
             <div className={'welcome'}>
                 <h1
+                    style={{
+                        flex: 1,
+                    }}
                 >
                     {tp.execute('Купля-продажа готового бизнеса, франшиз и недвижемости. Консалтинг, коучинг')}</h1>
                 <div className={'logo'}>
@@ -64,7 +67,7 @@ function Home() {
                             <ResponsiveIcon path={mdiEmailEditOutline} backgroundColor={'rgb(243, 165, 158)'} color="#424343" size={2} />
                         </a>
                     </div>
-                    <img src={'/static/svg/bm_logo.svg'}></img>
+                    <img className={'logo-image'} src={'/static/svg/bm_logo.svg'} />
                 </div >
                 {/* <div
                     style={{
