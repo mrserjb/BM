@@ -28,7 +28,6 @@ function ResponsiveIcon(props) {
                 minWidth: 60,
                 width: '100%',
                 maxWidth: 100,
-                // height: 0,
                 position: 'relative',
             }}
         >
@@ -99,14 +98,6 @@ function Home() {
                     </div>
                     <LogoImage />
                 </div >
-                {/* <div
-                    style={{
-                        display: 'flex',
-                        // paddingTop: '2%',
-                        justifyContent: 'center',
-                    }}>
-                    <Icon path={mdiChevronDown} color="rgb(243, 165, 158)" size={2} />
-                </div> */}
             </div >
 
             <ColumnLayout>
@@ -169,9 +160,6 @@ function Home() {
                     <h3>Контакты</h3>
                     <p className={'footer_p'}
                         style={{
-                            // color: 'white',
-                            // width: '40%',
-
                         }}>
                         {tp.execute('Товарищи! реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Равным образом дальнейшее развитие различных форм деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.')}
                     </p>
