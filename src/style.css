@@ -71,7 +71,7 @@ p {
     font-weight: 400;
     color: #ffffff;
     hyphens: auto;
-    /* width: 40%; */
+    width: 50%;
     padding-bottom: 5%;
 }
 
@@ -144,11 +144,17 @@ p {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 850px) {
     .colomn {
         width: 100%;
         /* padding-left: 10px;
         padding-right: 10px; */
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .footer_p {
+        width: 90%;
     }
 }
 
