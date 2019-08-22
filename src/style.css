@@ -85,7 +85,7 @@ p {
     flex-direction: column;
 }
 
-.colomn-layout {
+.column-layout {
     padding: 10% 10% 5% 10%;
     /* padding-top: 10%;
     padding-bottom: 5%; */
@@ -93,7 +93,7 @@ p {
     flex-wrap: wrap;
 }
 
-.colomn {
+.column {
     width: 50%;
     padding-left: 5%;
     padding-right: 5%;
@@ -145,7 +145,7 @@ p {
 }
 
 @media (max-width: 500px) {
-    .colomn {
+    .column {
         width: 100%;
         /* padding-left: 10px;
         padding-right: 10px; */
