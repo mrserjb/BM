@@ -1,5 +1,6 @@
 import '../src/style.css'
 import Icon from '@mdi/react';
+import { LogoImage } from '../src/components/LogoImage';
 import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown } from '@mdi/js';
 
 const Typograf = require('typograf');
@@ -84,7 +85,7 @@ function Home() {
                             size={2}
                         />
                     </div>
-                    <img className={'logo-image'} src={'/static/svg/bm_logo.svg'} />
+                    <LogoImage />
                 </div >
                 {/* <div
                     style={{
@@ -138,8 +139,7 @@ function Home() {
                         {tp.execute('Товарищи! реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Равным образом дальнейшее развитие различных форм деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.')}
                     </p>
                 </div>
-                <img width={200} src={'/static/svg/bm_logo.svg'}></img>
-
+                <LogoImage height={50} />
             </div>
         </>
     )

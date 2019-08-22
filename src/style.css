@@ -121,11 +121,6 @@ p {
     margin-right: 10px;
 }
 
-.logo-image {
-    margin-bottom: var(--main-padding);
-    height: 100px;
-}
-
 .footer {
     display: flex;
     flex: 0 0 auto;
