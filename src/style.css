@@ -64,6 +64,17 @@ p {
     hyphens: auto;
 }
 
+.footer_p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    hyphens: auto;
+    /* width: 40%; */
+    padding-bottom: 5%;
+}
+
 .welcome {
     background-color: #424343;
     padding: var(--main-padding) var(--main-padding) 0;
@@ -139,3 +150,15 @@ p {
         padding-right: 10px; */
     }
 }
+
+/* @media (max-width: 500px) {
+    .footer_p {
+        width: 100%;
+    }
+} */
+
+/* @media (max-width:500px) {
+    .footer {
+        flex-direction: column;
+    }
+} */
