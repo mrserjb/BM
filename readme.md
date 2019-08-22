@@ -13,7 +13,17 @@ Deploy production to now.sh
 ```
 now
 ```
+Для экспорта проекта:
 
+1 - 
+```
+npm run built
+```
+
+2-
+```
+npm run export
+```
 
 ## Почитать
 
