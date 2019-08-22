@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800,900&display=swap&subset=cyrillic');
 :root {
     --header-font-size: 7vw;
+    --main-padding: 20px;
 }
 
 body {
@@ -64,7 +65,7 @@ p {
 
 .welcome {
     background-color: #424343;
-    padding: 20px 20px 0;
+    padding: var(--main-padding) var(--main-padding) 0;
     box-sizing: border-box;
     height: 100vh;
 
@@ -98,17 +99,17 @@ p {
     flex-wrap: wrap-reverse;
 }
 
-.logo>div {
+.logo > div {
     display: flex;
 }
 
-.logo>div>* {
-    margin-bottom: 20px;
+.logo > div > * {
+    margin-bottom: var(--main-padding);
     margin-right: 10px;
 }
 
 .logo-image {
-    margin-bottom: 20px;
+    margin-bottom: var(--main-padding);
     height: 100px;
 }
 
@@ -121,26 +122,9 @@ p {
     box-sizing: border-box;
 }
 
-/* @media (max-width: 1366px) {
+@media (max-width: 500px) {
     :root {
-        --header-font-size: 7vw;
-    }
-} */
-
-@media (max-width: 1366px) and (orientation: landscape) {
-    :root {
-        --header-font-size: 8vw;
-    }
-}
-
-@media (max-width: 1280px) and (orientation: landscape) {
-    :root {
-        --header-font-size: 7vw;
-    }
-}
-
-@media (max-width: 800px) and (orientation: landscape) {
-    body {
-        flex-direction: column;
+        --header-font-size: 8.5vw;
+        --main-padding: 10px;
     }
 }
