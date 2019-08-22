@@ -124,23 +124,6 @@ p {
     }
 }
 
-<<<<<<< HEAD
-@media (max-width: 850px) {
-    .colomn {
-        width: 100%;
-        /* padding-left: 10px;
-        padding-right: 10px; */
-    }
-    .footer {
-        flex-direction: column;
-    }
-    .footer_p {
-        width: 90%;
-    }
-}
-
-=======
->>>>>>> b4c5511e740da2d3fc0ef92fd9780912a65dd5c6
 /* @media (max-width: 500px) {
     .footer_p {
         width: 100%;
