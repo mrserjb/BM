@@ -12,7 +12,7 @@ function ResponsiveIcon(props) {
         <a
             href={props.href}
             style={{
-                minWidth: 75,
+                minWidth: 60,
                 width: '100%',
                 maxWidth: 100,
                 // height: 0,
