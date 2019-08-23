@@ -17,7 +17,7 @@ now
 
 1 - 
 ```
-npm run built
+npm run build
 ```
 
 2-

@@ -2,7 +2,7 @@ import '../src/style.css'
 import Icon from '@mdi/react';
 import { LogoImage } from '../src/components/LogoImage';
 import { ColumnLayout } from '../src/components/ColumnLayout';
-import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown } from '@mdi/js';
+import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown } from '@mdi/js';
 
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
@@ -98,6 +98,12 @@ function Home() {
                         <ResponsiveIcon
                             href={'mailto:ks@бизнесмаркет.com'}
                             path={mdiEmailEditOutline}
+                            color="#424343"
+                            size={2}
+                        />
+                        <ResponsiveIcon
+                            href={'https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item'}
+                            path={mdiCartArrowDown}
                             color="#424343"
                             size={2}
                         />
