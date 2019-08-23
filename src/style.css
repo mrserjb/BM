@@ -48,10 +48,12 @@ h3 {
 
 a {
     background-color: rgb(243, 165, 158);
+    color: #424343;
+    font-weight: 600;
 }
 
 a:hover {
-    background-color: aqua;
+    background-color: aqua
 }
 
 p {
