@@ -7,6 +7,6 @@ export const LogoImage = ({ height = 100, ...props }) => (
             }
         `}</style>
 
-        <img className={'logo-image'} src={'/static/svg/bm_logo.svg'} />
+        <img className={'logo-image'} src={'/static/bm_logo.svg'} />
     </>
 )
