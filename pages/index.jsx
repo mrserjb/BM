@@ -3,7 +3,8 @@ import Icon from '@mdi/react';
 import { LogoImage } from '../src/components/LogoImage';
 import { ColumnLayout } from '../src/components/ColumnLayout';
 import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown } from '@mdi/js';
-import React from 'react';
+import Modal from 'react-modal';
+import React, { useState } from 'react';
 
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
@@ -58,7 +59,12 @@ function ResponsiveIcon(props) {
     )
 }
 
+Modal.setAppElement('.welcome') // это нужно вызвать на рут элемент 
+
 function Home() {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         <>
             <div className={'welcome'}>
@@ -175,11 +181,42 @@ function Home() {
                         {('E-mail: ek@бизнесмаркет.com, ks@бизнесмаркет.com')}<br /><br />
                         <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a>
                     </p>
+                    <button onClick={() => setModalIsOpen(true)} >свяжитесь с нами</button>
                 </div>
                 <LogoImage height={50} />
             </div>
+
+            <Modal 
+                isOpen = {modalIsOpen}
+                onRequestClose = {() => setModalIsOpen(false)}
+                overlayClassName = "formContainer-overlay"
+                className = "formContainer"
+            >
+                <form method="POST" className="form">
+                    <button onClick={() => setModalIsOpen(false)} >закрыть форму</button>
+                    <br/>
+                    <input type="hidden" name="_captcha" value="false"/> {/* DEV */}
+                    <br/>
+                    <input type="text" name="test text" className="test"/>
+                    <br/>
+
+                    <input type="submit" onClick={(e) => handleSubmit(e)} />
+                </form>
+            </Modal>
         </>
     )
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+    const formElement = document.querySelector(".form");
+    var data = new FormData(formElement);  
+    fetch("https://formsubmit.co/ajax/jilxrbpe@sharklasers.com", {
+        method: "POST",
+        body: data
+    })
+    .then(response => console.log(response))
+
 }
 
 export default Home
