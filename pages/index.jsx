@@ -2,9 +2,10 @@ import '../src/style.css'
 import Icon from '@mdi/react';
 import { LogoImage } from '../src/components/LogoImage';
 import { ColumnLayout } from '../src/components/ColumnLayout';
-import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown } from '@mdi/js';
+import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown, mdiClose, mdiCheck } from '@mdi/js';
 import Modal from 'react-modal';
 import React, { useState } from 'react';
+import { types } from 'util';
 
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
@@ -64,6 +65,7 @@ Modal.setAppElement('.welcome') // это нужно вызвать на рут 
 function Home() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [formSent, setFormSent] = useState(false);
 
     return (
         <>
@@ -179,9 +181,9 @@ function Home() {
                         {('Сочи, ул. Конституции СССР, дом18, пом.619')} <br />
                         {('Телефон: +7 (963) 347-3675, +7 (962) 883-9222')}<br />
                         {('E-mail: ek@бизнесмаркет.com, ks@бизнесмаркет.com')}<br /><br />
-                        <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a>
+                        <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a><br/><br/>
+                        <button className="contact" onClick={() => setModalIsOpen(true)} >Обратная связь</button>
                     </p>
-                    <button onClick={() => setModalIsOpen(true)} >свяжитесь с нами</button>
                 </div>
                 <LogoImage height={50} />
             </div>
@@ -192,31 +194,59 @@ function Home() {
                 overlayClassName = "formContainer-overlay"
                 className = "formContainer"
             >
-                <form method="POST" className="form">
-                    <button onClick={() => setModalIsOpen(false)} >закрыть форму</button>
-                    <br/>
-                    <input type="hidden" name="_captcha" value="false"/> {/* DEV */}
-                    <br/>
-                    <input type="text" name="test text" className="test"/>
-                    <br/>
+                <div
+                    className="closeFormButton" onClick={() => setModalIsOpen(false)}
+                    style = {{
+                        alignSelf: 'flex-end',
+                        flexBasis: '0',
+                        marginBottom: '.5rem'
+                    }}
+                >
+                    <Icon
+                        path={mdiClose}
+                        color="#424343"
+                        size={1.5}
+                    />
+                </div>
 
-                    <input type="submit" onClick={(e) => handleSubmit(e)} />
-                </form>
+                { !formSent ?
+                    <form method="POST">
+                        
+                        <h3>Форма обратной связи</h3>
+                        <br/>
+                        <input className="phone" type="tel" name="phone" placeholder="Телефон (обязательно)" required/>
+                        <br/>
+                        <input className="name" type="text" name="name" placeholder="Имя" />
+                        <br/>
+                        <input className="email" type="email" name="email" placeholder="Email" />
+                        <br/>
+
+                        <input className="submitButton" type="submit" value="Отправить" onClick={(e) => {
+                            e.preventDefault();
+                            const formElement = document.querySelector("form");
+                            var data = new FormData(formElement);
+
+                            if(formElement.reportValidity())
+                                fetch("https://formsubmit.co/ajax/mbqinbbk@sharklasers.com", { /* тут вставлять нужный мейл */
+                                    method: "POST",
+                                    body: data
+                                })
+                                .then(response => response.ok ? setFormSent(true) : console.log('сервер формы вернул ошибку') )
+                        }} />
+                    </form>
+                :
+                    <div>
+                        <p>Ваша форма отправлена</p>
+                        <Icon
+                            path={mdiCheck}
+                            color="#f3a59e"
+                            size={7}
+                        />
+                    </div>
+                }
             </Modal>
         </>
     )
-}
-
-function handleSubmit(e) {
-    e.preventDefault();
-    const formElement = document.querySelector(".form");
-    var data = new FormData(formElement);  
-    fetch("https://formsubmit.co/ajax/jilxrbpe@sharklasers.com", {
-        method: "POST",
-        body: data
-    })
-    .then(response => console.log(response))
-
 }
 
 export default Home
