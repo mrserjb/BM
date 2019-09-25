@@ -2,6 +2,7 @@ import '../src/style.css'
 import Icon from '@mdi/react';
 import { LogoImage } from '../src/components/LogoImage';
 import { ColumnLayout } from '../src/components/ColumnLayout';
+import { ContactForm } from '../src/components/ContactForm';
 import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown, mdiClose, mdiCheck } from '@mdi/js';
 import Modal from 'react-modal';
 import React, { useState } from 'react';
@@ -188,63 +189,12 @@ function Home() {
                 <LogoImage height={50} />
             </div>
 
-            <Modal 
-                isOpen = {modalIsOpen}
-                onRequestClose = {() => setModalIsOpen(false)}
-                overlayClassName = "formContainer-overlay"
-                className = "formContainer"
-            >
-                <div
-                    className="closeFormButton" onClick={() => setModalIsOpen(false)}
-                    style = {{
-                        alignSelf: 'flex-end',
-                        flexBasis: '0',
-                        marginBottom: '.5rem'
-                    }}
-                >
-                    <Icon
-                        path={mdiClose}
-                        color="#424343"
-                        size={1.5}
-                    />
-                </div>
-
-                { !formSent ?
-                    <form method="POST">
-                        
-                        <h3>Форма обратной связи</h3>
-                        <br/>
-                        <input className="phone" type="tel" name="phone" placeholder="Телефон (обязательно)" required/>
-                        <br/>
-                        <input className="name" type="text" name="name" placeholder="Имя" />
-                        <br/>
-                        <input className="email" type="email" name="email" placeholder="Email" />
-                        <br/>
-
-                        <input className="submitButton" type="submit" value="Отправить" onClick={(e) => {
-                            e.preventDefault();
-                            const formElement = document.querySelector("form");
-                            var data = new FormData(formElement);
-
-                            if(formElement.reportValidity())
-                                fetch("https://formsubmit.co/ajax/mbqinbbk@sharklasers.com", { /* тут вставлять нужный мейл */
-                                    method: "POST",
-                                    body: data
-                                })
-                                .then(response => response.ok ? setFormSent(true) : console.log('сервер формы вернул ошибку') )
-                        }} />
-                    </form>
-                :
-                    <div>
-                        <p>Ваша форма отправлена</p>
-                        <Icon
-                            path={mdiCheck}
-                            color="#f3a59e"
-                            size={7}
-                        />
-                    </div>
-                }
-            </Modal>
+            <ContactForm 
+                modalIsOpen={modalIsOpen} 
+                formSent={formSent} 
+                setModalIsOpen={setModalIsOpen} 
+                setFormSent={setFormSent} 
+            />
         </>
     )
 }
