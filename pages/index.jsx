@@ -2,8 +2,11 @@ import '../src/style.css'
 import Icon from '@mdi/react';
 import { LogoImage } from '../src/components/LogoImage';
 import { ColumnLayout } from '../src/components/ColumnLayout';
-import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown } from '@mdi/js';
-import React from 'react';
+import { ContactForm } from '../src/components/ContactForm';
+import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown, mdiClose, mdiCheck } from '@mdi/js';
+import Modal from 'react-modal';
+import React, { useState } from 'react';
+import { types } from 'util';
 
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
@@ -58,7 +61,12 @@ function ResponsiveIcon(props) {
     )
 }
 
+Modal.setAppElement('.welcome') // это нужно вызвать на рут элемент 
+
 function Home() {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         <>
             <div className={'welcome'}>
@@ -173,11 +181,18 @@ function Home() {
                         {('Сочи, ул. Конституции СССР, дом18, пом.619')} <br />
                         {('Телефон: +7 (963) 347-3675, +7 (962) 883-9222')}<br />
                         {('E-mail: ek@бизнесмаркет.com, ks@бизнесмаркет.com')}<br /><br />
-                        <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a>
+                        <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a><br/><br/>
+                        <button className="contact" onClick={() => setModalIsOpen(true)} >Обратная связь</button>
                     </p>
                 </div>
                 <LogoImage height={50} />
             </div>
+
+            <ContactForm 
+                modalIsOpen={modalIsOpen} 
+                onClose={setModalIsOpen} 
+                email={process.env.email}
+            />
         </>
     )
 }

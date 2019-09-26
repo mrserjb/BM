@@ -114,6 +114,20 @@ p {
     flex-wrap: wrap;
 }
 
+.contact {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #424343;
+    background-color: rgb(243, 165, 158);
+    hyphens: auto;
+    border: none;
+}
+.contact:hover {
+    background-color: aqua;
+}
+
 @media (max-width: 500px) {
     :root {
         --header-font-size: 8.5vw;
