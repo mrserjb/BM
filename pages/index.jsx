@@ -66,7 +66,6 @@ Modal.setAppElement('.welcome') // это нужно вызвать на рут 
 function Home() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [formSent, setFormSent] = useState(false);
 
     return (
         <>
@@ -191,9 +190,8 @@ function Home() {
 
             <ContactForm 
                 modalIsOpen={modalIsOpen} 
-                formSent={formSent} 
-                setModalIsOpen={setModalIsOpen} 
-                setFormSent={setFormSent} 
+                onClose={setModalIsOpen} 
+                email={process.env.email}
             />
         </>
     )

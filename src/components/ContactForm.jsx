@@ -1,17 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import Modal from 'react-modal';
 import { mdiClose, mdiCheck } from '@mdi/js';
 import Icon from '@mdi/react';
+import PropTypes from 'prop-types';
 
+export const ContactForm = ({modalIsOpen, onClose, email}) => {
 
-export const ContactForm = ({modalIsOpen, formSent, setModalIsOpen, setFormSent}) => {
+    const [formSent, setFormSent] = useState(false);
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
         const formElement = document.querySelector(".contactForm");
     
         if(formElement.reportValidity())
-             fetch(`https://formsubmit.co/ajax/${process.env.email}`, {
+             fetch(`https://formsubmit.co/ajax/${email}`, {
                 method: "POST",
                 body: new FormData(formElement)
             })
@@ -21,7 +23,7 @@ export const ContactForm = ({modalIsOpen, formSent, setModalIsOpen, setFormSent}
     return (
         <Modal 
             isOpen = {modalIsOpen}
-            onRequestClose = {() => setModalIsOpen(false)}
+            onRequestClose = {() => onClose(false)}
             overlayClassName = "formContainer-overlay"
             className = "formContainer"
         >
@@ -31,7 +33,7 @@ export const ContactForm = ({modalIsOpen, formSent, setModalIsOpen, setFormSent}
                 size={1.5}
 
                 className="closeFormButton" 
-                onClick={() => setModalIsOpen(false)}
+                onClick={() => onClose(false)}
             />
 
             { !formSent ?
@@ -59,87 +61,98 @@ export const ContactForm = ({modalIsOpen, formSent, setModalIsOpen, setFormSent}
                 </div>
             }
 
-            <style jsx global>{`
-            .formContainer-overlay {
-                background-color: rgba(42, 43, 43, .75);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+            <style jsx> {`  
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    flex-grow: 1; 
+                }
+                form > * {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    font-weight: 400;
+                    color: #424343;
+                    hyphens: auto;
+                }
+                form input {
+                    padding: .5rem .5rem;
+                }
                 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .formContainer {
-                padding: var(--main-padding);
-                background-color: white;
-                overflow: auto;
-            
-                display: flex;
-                flex-direction: column;
-            
-                text-align: center;
-            }
-            
-            .ReactModal__Overlay {
-                opacity: 0;
-                transition: opacity .5s ease-in-out;
-            }
-            .ReactModal__Overlay--after-open{
-                opacity: 1;
-            }
-            .ReactModal__Overlay--before-close{
-                opacity: 0;
-            }
-            
-            .closeFormButton {
-                align-self: flex-end;
-                flex-grow: 0;
-                margin-bottom: .5rem;
-            }
+                .submitButton {
+                    background-color: rgb(243, 165, 158);
+                    border: none;
+                    font-weight: 400;
+                    justify-self: flex-end;
+                }
+                .submitButton:hover {
+                    background-color: aqua;
+                }
+            `} </style>
+            <style jsx global> {`
+                .ReactModal__Overlay {
+                    opacity: 0;
+                    transition: opacity .5s ease-in-out;
+                }
+                .ReactModal__Overlay--after-open{
+                    opacity: 1;
+                }
+                .ReactModal__Overlay--before-close{
+                    opacity: 0;
+                }
+                .ReactModal__Body--open {
+                    overflow: hidden;
+                }
 
-            form {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                flex-grow: 1; 
-            }
-            form > * {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1rem;
-                line-height: 1.5rem;
-                font-weight: 400;
-                color: #424343;
-                hyphens: auto;
-            }
-            form input {
-                padding: .5rem .5rem;
-            }
-            
-            .submitButton {
-                background-color: rgb(243, 165, 158);
-                border: none;
-                font-weight: 400;
-                justify-self: flex-end;
-            }
-            .submitButton:hover {
-                background-color: aqua;
-            }
+                // это в global потому что jsx не применяется на дочерние компоненты
 
-            @media (max-width: 500px) {
-                .formContainer {
+                .formContainer-overlay {
+                    background-color: rgba(42, 43, 43, .75);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
                     width: 100%;
                     height: 100%;
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
-                .closeFormButton{
-                    margin-top: .5rem;
+                
+                .formContainer {
+                    padding: var(--main-padding);
+                    background-color: white;
+                
+                    display: flex;
+                    flex-direction: column;
+                
+                    text-align: center;
                 }
-            }
-        `}</style>
+
+                .closeFormButton {
+                    align-self: flex-end;
+                    flex-grow: 0;
+                    margin-bottom: .5rem;
+                }
+
+                @media (max-width: 500px) {
+                    .formContainer {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .closeFormButton{
+                        margin-top: .5rem;
+                    }
+                }
+            `} </style>
         
         </Modal>
     )
+}
+
+ContactForm.propTypes = {
+    modalIsOpen: PropTypes.bool,
+    onClose: PropTypes.func,
+    email: PropTypes.string
 }
