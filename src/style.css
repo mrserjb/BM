@@ -140,6 +140,7 @@ p {
     background-color: aqua;
     padding: 20px;
     margin-right: 20px;
+    margin-top: 20px;
     hyphens: auto;
     border: none;
 }
