@@ -6,12 +6,10 @@ import { ContactForm } from '../src/components/ContactForm';
 import { mdiPhone, mdiEmailEditOutline, mdiEmailOutline, mdiCellphoneIphone, mdiChevronDown, mdiCartArrowDown, mdiClose, mdiCheck } from '@mdi/js';
 import Modal from 'react-modal';
 import React, { useState } from 'react';
-import { types } from 'util';
 
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
 
-console.log(tp.execute(' Мир - мой мир!!   '));
 
 function ColumnBody({ title, children }) {
     return (
@@ -63,10 +61,9 @@ function ResponsiveIcon(props) {
 
 Modal.setAppElement('.welcome') // это нужно вызвать на рут элемент 
 
-function Home() {
-
+export default function Home() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-
+ 
     return (
         <>
             <div className={'welcome'}>
@@ -181,5 +178,3 @@ function Home() {
         </>
     )
 }
-
-export default Home
