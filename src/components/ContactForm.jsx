@@ -39,9 +39,9 @@ export const ContactForm = ({modalIsOpen, onClose, email}) => {
             { !formSent ?
                 <form className="contactForm" method="POST">
                     
-                    <h3>Форма обратной связи</h3>
+                    <h3>Хотите купить или продать бизнес? Свяжитесь с нами!</h3>
                     <br/>
-                    <input className="phone" type="tel" name="phone" placeholder="Телефон (обязательно)" required/>
+                    <input className="phone" type="tel" name="phone" placeholder="Телефон*" required/>
                     <br/>
                     <input className="name" type="text" name="name" placeholder="Имя" />
                     <br/>
@@ -52,7 +52,7 @@ export const ContactForm = ({modalIsOpen, onClose, email}) => {
                 </form>
             :
                 <div>
-                    <p>Ваша форма отправлена</p>
+                    <p>Спасибо, мы скоро с вами свяжемся.</p>
                     <Icon
                         path={mdiCheck}
                         color="#f3a59e"

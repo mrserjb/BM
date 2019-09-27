@@ -134,6 +134,7 @@ function Home() {
 
                     Покупая и продавая готовый бизнес и франшизы с бизнес-брокерским агентством «Бизнес Маркет» Вы можете быть уверены в чистоте сделки.
                 </ColumnBody>
+                <div><button className="contact" onClick={() => setModalIsOpen(true)} >Купить бизнес</button><button className="contact2" onClick={() => setModalIsOpen(true)} >Продать бизнес</button></div>
                 <ColumnBody
                     title={'Маркетинг и реклама'}
                 >
@@ -182,7 +183,7 @@ function Home() {
                         {('Телефон: +7 (963) 347-3675, +7 (962) 883-9222')}<br />
                         {('E-mail: ek@бизнесмаркет.com, ks@бизнесмаркет.com')}<br /><br />
                         <a href="https://www.avito.ru/user/b13f450aaa32a0663ee99dca74b65902/profile?id=1773264284&src=item">НАШИ ЛОТЫ</a><br/><br/>
-                        <button className="contact" onClick={() => setModalIsOpen(true)} >Обратная связь</button>
+                        <button className="contact" onClick={() => setModalIsOpen(true)} >Обратная связь</button><button className="contact2" onClick={() => setModalIsOpen(true)} >Обратная связь</button>
                     </p>
                 </div>
                 <LogoImage height={50} />

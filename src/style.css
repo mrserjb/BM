@@ -121,11 +121,31 @@ p {
     font-weight: 600;
     color: #424343;
     background-color: rgb(243, 165, 158);
+    padding: 20px;
+    margin-right: 20px;
     hyphens: auto;
     border: none;
 }
 .contact:hover {
+    background-color:  #424343;
+    color: rgb(243, 165, 158);
+}
+
+.contact2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #424343;
     background-color: aqua;
+    padding: 20px;
+    margin-right: 20px;
+    hyphens: auto;
+    border: none;
+}
+.contact2:hover {
+    background-color:  #424343;
+    color: aqua;
 }
 
 @media (max-width: 500px) {
