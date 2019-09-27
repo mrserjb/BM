@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 const Typograf = require('typograf');
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
 
+const EMAIL = process.env.EMAIL
 
 function ColumnBody({ title, children }) {
     return (
@@ -173,7 +174,7 @@ export default function Home() {
             <ContactForm 
                 modalIsOpen={modalIsOpen} 
                 onClose={setModalIsOpen} 
-                email={process.env.email}
+                email={EMAIL}
             />
         </>
     )
